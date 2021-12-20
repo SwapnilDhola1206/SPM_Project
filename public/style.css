@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.time-select,
+.sound-picker {
+  height: 80%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.time-select button{
+  border-radius: 2000px;
+}
+.time-select button,
+.sound-picker button {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.719);
+  width: 30%;
+  height: 10%;
+  
+  font-size: 20px;
+  
+  cursor: pointer;
+  border: 2px solid rgb(20, 10, 10);
+  transition: all 0.5s ease;
+}
+
+.sound-picker button {
+  
+  height: 120px;
+  width: 120px;
+  padding: 30px;
+  border-radius: 50%;
+}
+
+.sound-picker button:nth-child(1) {
+  background: #4972a1;
+}
+.sound-picker button:nth-child(1):hover{
+  background-color: rgba(0, 0, 0, 0.726);
+  border: 2px solid whitesmoke;
+} 
+.sound-picker button:nth-child(2) {
+  background: #a14f49;
+}
+.sound-picker button:nth-child(2):hover{
+  background-color: rgba(0, 0, 0, 0.726);
+  border: 2px solid whitesmoke;
+} 
+.sound-picker button img {
+  height: 100%;
+}
+
+.time-select button:hover {
+  background: rgba(255, 255, 255, 0.541);
+  color: black;
+  border: 2px solid rgb(0, 0, 0);
+}
+.play{
+  margin-top: 70px;
+  margin-left: 10px;
+
+}
+.play:hover{
+  cursor: pointer;
+}
+.replay:hover{
+  cursor: pointer;
+}
+.player-container {
+  position: relative;
+  
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+.player-container svg circle {
+  transition: all 0.2s ease-in-out;
+}
+.time-display {
+  color: white;
+  position: absolute;
+  font-size: 50px;
+  bottom: 10%;
+}
+
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -10;
+}
