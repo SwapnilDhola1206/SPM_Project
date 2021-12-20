@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate')%>
+<div class="container mb-5">
+    <div class="container d-flex justify-content-center">
+      <p class="h1">All meditation centers</p>
+    </div>
+  </div>
+<div id="cluster-map" class = "mb-4"></div>
+<div class="container">
+    <div class="row">
+        <% for (let meditationCenter of meditationCenters){%>
+            <!-- card col-md-5 mx-auto mb-4 p-1 -->
+            
+            <div class="col-md-6 mx-auto mb-4 d-flex align-items-stretch" >
+                
+                <div class="card d-flex flex-column p-2">
+                    <%if(meditationCenter.images.length) {%>
+                        <img class="card-img-top" alt="" src="<%=meditationCenter.images[0].url%>">
+                    <% }else {%>
+                        <img class="card-img-top" alt=""
+                            src="https://www.flare.com/wp-content/uploads/2019/07/Flare_MindfulnessApps_social.jpg">
+                    <% } %>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= meditationCenter.title %> </h5>
+                        <p class="card-text"><%= meditationCenter.description %></p>
+                        <p class="card-text">
+                            <small class="text-muted"><%= meditationCenter.location%></small>
+                        </p>
+                        
+                    </div>
+                    <a type = "button" class="mt-auto btn btn-block btn-info" style="margin-top: auto;" href="/meditationCenters/<%=meditationCenter._id%>">More information</a>
+                </div>
+                
+            </div>
+            <% }%>
+    </div>
+    
+</div>
+
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const meditationCenters = { features: <%-JSON.stringify(meditationCenters) %> }
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>
