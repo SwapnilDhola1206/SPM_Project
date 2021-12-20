@@ -1,4 +1,4 @@
-# SPM_Project
+# Meditation
 
 Meditation is a method of training attention and awareness, as well as achieving a cognitively clear and emotionally peaceful and stable state, via the application of a technique such as mindfulness, or focusing the mind on a specific object, thought, or activity.
 
